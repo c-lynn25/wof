@@ -6,7 +6,7 @@ document.write(rand+" ");
 sp = (rand+sp)%360;
 document.write(sp+" ");
 
-if(sp%5==0 || sp==112){
+if(sp%30==0){
 	document.write("This is a boundary");
 	var decider = Math.random();
 	document.write("decider is: "+decider);
@@ -36,7 +36,7 @@ function removeCredit(x){
 }
 function surprise(){
 	var s = Math.random();
-	var amount = parseInt(Math.random()*500);
+	var amount = parseInt(Math.random()*200);
 	if (s>0.5){
 		addCredit(amount);
 	}
@@ -47,23 +47,29 @@ function surprise(){
 }
 //switch statement determining upper and lower boundaries for the slices so that midpoints are found
 switch(true){
-	case (sp>0 && sp<45): upper = 45; lower = 0; removeCredit(500);
+	case (sp>0 && sp<30): upper = 30; lower = 0; removeCredit(500);
 	break;
-	case (sp>45 && sp<90): upper = 90; lower = 45; surprise();
+	case (sp>30 && sp<60): upper = 60; lower = 30; surprise();
 	break;
-	case (sp>90 && sp<112): upper = 112; lower = 90; addCredit(10000);
+	case (sp>60 && sp<90): upper = 90; lower = 60; addCredit(10000);
 	break;
-	case (sp>112 && sp<135): upper = 135; lower = 112; removeCredit(credit);
+	case (sp>90 && sp<120): upper = 120; lower = 90; removeCredit(credit);
 	break;
-	case (sp>135 && sp<180): upper = 180; lower = 135; addCredit(250);
+	case (sp>120 && sp<150): upper = 150; lower = 120; addCredit(250);
 	break;
-	case (sp>180 && sp<225): upper = 225; lower = 180; removeCredit(credit/2);
+	case (sp>150 && sp<180): upper = 180; lower = 150; removeCredit(credit/2);
 	break;
-	case (sp>225 && sp<270): upper = 270; lower = 225; addCredit(credit);
+	case (sp>180 && sp<210): upper = 210; lower = 180; addCredit(credit);
 	break;
-	case (sp>270 && sp<315): upper = 315; lower = 270; removeCredit(400);
+	case (sp>210 && sp<240): upper = 240; lower = 210; removeCredit(400);
 	break;
-	case (sp>315 && sp<360): upper = 360; lower = 315; addCredit(800);
+	case (sp>240 && sp<270): upper = 270; lower = 240; addCredit(800);
+	break;
+	case (sp>270 && sp<300): upper = 300; lower = 270; removeCredit(credit/2);
+	break;
+	case (sp>300 && sp<330): upper = 330; lower = 360; addCredit(credit);
+	break;
+	case (sp>330 && sp<360): upper = 360; lower = 330; removeCredit(400);
 	break;
 	}
 sp=(upper+lower)/2;
