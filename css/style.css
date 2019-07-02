@@ -1,0 +1,45 @@
+body{
+	font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+  max-width: 300px;
+  margin: auto;
+  background:white;
+  padding: 30px 20px 30px 60px;
+  border-radius: 5px;
+}
+form{
+	margin: auto;
+	width: 500px;
+}
+.logo img{
+	width:250px;
+	height:250px;
+	margin: 8px 0;
+}
+/* Full-width input fields */
+input[type=text],input[type=email], input[type=password] {
+  width: 250px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 250px;
+}
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+ .logo img{
+	 width:100%;
+	 
+ }
+  }
