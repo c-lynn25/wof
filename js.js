@@ -1,3 +1,4 @@
+
 var sp = 0,upper = 0, lower =0,credit=100;
 //determining your startposition
 //document.write(sp+" ");
@@ -106,3 +107,4 @@ function checkCredit(bet) {
         alert("this far may bankrupt you...");
     }
 }
+
