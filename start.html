@@ -2,10 +2,20 @@
 <head>
     <meta charset="utf-8" />
 	<meta type="viewpoint" content="width=device-width, initial-scale=1">
-    <title>Login</title>
+    <title>Start Page</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="css/start.css">
 		<link rel="stylesheet" type="text/css" href="css/global.css">
+	 <style>
+        .button1 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            cursor: pointer;
+            width: 250px;
+        }
+    </style>
 	</head>
 	<body id="particles-js">
 	<section class="container-fluid bg">
@@ -14,16 +24,14 @@
 			<form class="form-container">	
 		<img src="img\name.png" /> 
 		<div class="wheel">
-		<img src="img\wheel.png" /> 
-	</div>
-	<div onclick="window.location.href ='login.html'">
-	<button type="submit" >Sign In</button><br/>
-	</div>
-	<div onclick="window.location.href ='register.html'">
-	<br/><button type="submit" >Sign Up</button>
-	</div>
-	</form>
-	</section>
+		    <img src="img\wheel.png" /> 
+	    </div>
+        <div>
+            <a href="login.html" class="button1">Sign In</a>
+            <a href="register.html" class="button1">Sign Up</a>
+        </div>
+	        </form>
+	        </section>
 		</section>
 	</section>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
