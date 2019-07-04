@@ -2,7 +2,7 @@
     var wheel = $('#wheel');
     var bet = $('#betAmount');
     var arrow = $('#arrow');
-    var info = $("#credAmount");
+    var info = $("#resAmount");
     var credit=100;
     var prize = 0;
 
