@@ -72,7 +72,7 @@
     TweenLite.ticker.addEventListener("tick", update);
     
     function puaseAud(){
-      sound.stop(0); 
+      spinner.stop(0); 
       
      //Zoom out results
     TweenMax.to(info, 1, {scale:1.5, ease:Bounce.easeOut})
