@@ -32,7 +32,7 @@ function surprise(){
 }
 function spin() {
     var bet = document.getElementById("betA").value;
-    alert("bet is " + bet);
+   // alert("bet is " + bet);
     if (bet <= credit) {
         removeCredit(bet);
     var rand = parseInt(Math.random() * 360);//use random.org for better results
