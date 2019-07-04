@@ -22,7 +22,11 @@
     <link rel="stylesheet" type="text/css" href="css/game.css">
     <style>
 
-        #confirm {
+       #navy {
+           z-index: 500; 
+        }
+       
+      #confirm {
             display: none;
             background-color: #F3F5F6;
             color: #000000;
@@ -56,7 +60,7 @@
 
 <body onload="displayCredits()" id="particles-js">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <nav id="navy" class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
         <div class="container">
             <a class="navbar-brand" href="#">Wheel of Fortune</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
