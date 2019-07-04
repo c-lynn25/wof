@@ -1,0 +1,56 @@
+body {
+    background: linear-gradient(to right, red, yellow);
+    text-align:center;
+}
+#container {
+    background: #fff;
+    top: 15vh;
+    margin:auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #000;
+    position: relative;
+    z-index: 1;
+    display:inline-block;
+}
+#aside-right {
+    float:right;
+    left:1150px;
+}
+#aside-left {
+    float: left;
+}
+#footer {
+    padding:30px;
+}
+#credAmount{
+    border: 5px dotted black;
+    height:auto;
+    color:white;
+    background:black;
+}
+.credDiv-column {
+    background: #FF4500;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.wheelDiv-column {
+   padding-left:20px; 
+}
+.slideDiv-column {
+    padding:20px;
+    margin:auto;
+}
+.spinDiv-column {
+    
+}
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    cursor: pointer;
+    width: 250px;
+}
+
