@@ -28,3 +28,6 @@ function validateSignUp() {
         alert("Your passwords do not match!");
     }
 }
+function test() {
+    window.location.replace("gamePage.html");
+}
