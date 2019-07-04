@@ -1,15 +1,17 @@
-var sp = 0,upper = 0, lower =0,credit=100;
+var sp = 0,upper = 0, lower =0,credit=100,spinresult=0;
 //determining your startposition
 //document.write(sp+" ");
 
 function addCredit(x){
     credit += x;
     displayCredits();
+    document.getElementById("resAmount").innerHTML = "+"+x;
 }
 function removeCredit(x){
 	if(credit>=x){
         credit -= x;
         displayCredits();
+        document.getElementById("resAmount").innerHTML = "-"+x;
 	}
 	else{
         alert("End of game");//Pop up saying that the player has lost or to restart
@@ -126,3 +128,7 @@ function logout() {
         window.location.replace("login.html");
     }
 }
+function displayResult() {
+    document.getElementById("resAmount").innerHTML = spinresult;
+}
+
