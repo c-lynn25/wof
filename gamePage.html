@@ -85,13 +85,22 @@
         </div>
     </nav>
     <!-- Page Content -->
-    <div id="container">
-        <p>Welcome //username//</p>
+    <div id="image">
+        <img src="img/name.png" width=700px" height="150px" />
+    </div>
+    <div id="container">    
         <div id="aside-left">
             <div class="credDiv-column">
                 <h4>Credits</h4>
                 <p id="credAmount" style="border-radius:5px;"></p>
-                <h4>Bet Amount</h4>
+                <h4>Bet</h4>
+                <input type="range" id="betA" value="1" min="10" max="100" step="10"
+                       oninput="document.getElementById('betAmount').innerHTML = this.value" />
+                <label id="betAmount"></label><br />
+                <h4>Result</h4>
+                <p id="resAmount" style="border-radius:5px;"></p>
+
+                <br />
                 <button onclick="addLiveCredit()">Add Credit</button><br />
                 <br /><button onclick="cashout()">Cash Out</button>
             </div>
