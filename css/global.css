@@ -1,5 +1,7 @@
 body {
 	background:linear-gradient(to right, red , yellow);
+	text-align:center;
+	margin-top:5px;
 }
 .bg{
 	width:100%;
@@ -9,7 +11,6 @@ body {
 
 .form-container{
 	background:#fff;
-	top:15vh;
 	padding:30px;
 	border-radius:10px;
 	box-shadow:0px 0px 10px 0px #000;
@@ -52,9 +53,17 @@ button, .btn {
     -webkit-transition: opacity .8s ease, -webkit-transform 1.4s ease;
     transition: opacity .8s ease, transform 1.4s ease
 }
+.button1 {
+            background-color: #4CAF50;
+            color: white;
+            padding:8px 20px;
+            border: none;
+            cursor: pointer;
+			text-decoration: none;
+			display:block;		
+        }
 
-
-@media only screen and(max-width:678px){
+@media screen and(min-width: 576px)and(max-width:992px) and (orientation: landscape){
 .bg{
 	background-size:300%;
 }
@@ -62,4 +71,16 @@ button, .btn {
 	 width:300%;
 	 
  }
+ div{
+ display:block;
+ }
+  html {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
 }
