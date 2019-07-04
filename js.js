@@ -1,4 +1,3 @@
-
 var sp = 0,upper = 0, lower =0,credit=100;
 //determining your startposition
 //document.write(sp+" ");
@@ -107,4 +106,23 @@ function checkCredit(bet) {
         alert("this far may bankrupt you...");
     }
 }
-
+function functionAlert(msg, myYes) {
+    var confirmBox = $("#confirm");
+    confirmBox.find(".message").text(msg);
+    confirmBox.find(".yes").unbind().click(function () {
+        confirmBox.hide();
+    });
+    confirmBox.find(".yes").click(myYes);
+    confirmBox.show();
+}
+function logout() {
+    if (credit > 0) {
+        alert("You are now logged out - note that you will be automatically cashed out as well.");
+        cashout();
+        window.location.replace("login.html");
+    }
+    else {
+        alert("Logged out");
+        window.location.replace("login.html");
+    }
+}
