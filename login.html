@@ -19,15 +19,18 @@
             <img src="img\logo.jpg" /> 
         </div>
         <div class="form-group">
-            <input type="email" id="email" placeholder="Email Address..." pattern ="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required />
+            <input type="email" id="email" placeholder="Email Address..." pattern ="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"/> <!--required--> 
 			</div>
-			<div class="form-group">
-            <input type="password" id="password"  placeholder="Password..." required/>
+        <div class="form-group">
+            <input type="password" id="password" placeholder="Password..." /><!--required-->
             <p><a href="forgot.html">Forgot Password?</a></p>
+            <a href="gamePage.html" type="button submit">Sign In</a>
         </div>
-		<div onclick="validate()">
-			<button type="submit" id="submit">Sign In</button>
-		</div> 
+        <div >
+          <!--may have to redo button with the div onclick thing so that it works properly with the function
+              from the loginFunction.js-->
+        </div> 
+
 		</form>
 			</section>
 		</section>
