@@ -1,26 +1,161 @@
-﻿<!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+ <!--<![endif]-->
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Wheel of Fortune</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:800" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <script src="js.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        #confirm {
+            display: none;
+            background-color: #F3F5F6;
+            color: #000000;
+            border: 1px solid #aaa;
+            position: fixed;
+            width: 600px;
+            height: 500px;
+            left: 40%;
+            top: 40%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+            #confirm button {
+                background-color: #FFFFFF;
+                display: inline-block;
+                border-radius: 12px;
+                border: 4px solid #aaa;
+                padding: 5px;
+                text-align: center;
+                width: 60px;
+                cursor: pointer;
+            }
+
+            #confirm .message {
+                text-align: center;
+                background-color: #F3F5F6;
+            }
+    </style>
 </head>
+
 <body onload="displayCredits()">
-    <h2>Welcome //username//</h2>
-    <img src="butterfly.png" alt="This is a butterfly" width="300" height="150" />
-    <h4>Credits</h4>
-    <p id="credAmount"></p>
-    <button onclick="addLiveCredit()">Add Credit</button>
-    <button onclick="cashout()">Cash Out</button>
-    <div>
-        <p>
-            <h4>Bet Amount</h4>
-            <input type="range" id="betA" value="1" min="0" max="100" step="10"
-                   oninput="document.getElementById('betAmount').innerHTML = this.value" />
-            <label id="betAmount"></label>
-        </p>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Wheel of Fortune</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">
+                            THIS USER IS LOGGED ON
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="cashout()">Cash Out</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="logout()">Log Out</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="functionAlert()">Need Help?</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-8 text-center">
+
+                <!-- <canvas></canvas> -->
+
+               <img src="butterfly.png" alt="This is a butterfly" width="300" height="150" />
+   
+            </div>
+
+            <div class="col-lg-4">
+                
+            </div>
+
+        </div>
+</div>
+    <div class="container">
+
+        <h4>Credits</h4>
+        <p id="credAmount"></p>
+        <button onclick="addLiveCredit()">Add Credit</button>
+        <!--<button onclick="cashout()">Cash Out</button>-->
+        <div>
+            <p>
+                <h4>Bet Amount</h4>
+                <input type="range" id="betA" value="1" min="10" max="100" step="10"
+                       oninput="document.getElementById('betAmount').innerHTML = this.value" />
+                <label id="betAmount"></label>
+            </p>
+        </div>
+        <div>
+            <button onclick="spin()">Spin</button>
+        </div>
+        <div id="confirm">
+            <div class="message">Welcome to <br /><b>fantastic 5's WHEEL OF FORTUNE!</b><br /> Here is a step by step tutorial on how to play.<br />Players are allocated with 100 credits on the first session.<br />Select a bet amount by using the slider - note, only increments of 10 are allowed, with a minimum bet of 10 credits.<br />Once you've selected your bet, press SPIN!<br />And await your result.</div><br>
+            <button class="yes">Let's try!</button>
+        </div>
+   
+
+        <div class="row buttons">
+            <div class="col-xs-6 col-lg-6 col-md-6">
+                <button id="btnPlay" class="btn btn-primary">Start</button>
+            </div>
+            <div class="col-xs-6 col-lg-6 col-md-6">
+                <button id="btnSlowMo" class="btn btn-primary">SlowMo</button>
+            </div>
+        </div>
     </div>
-    <button onclick="spin()">Spin</button>
+
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/utils/Draggable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TimelineLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/plugins/CSSPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/easing/EasePack.min.js"></script>
+
+    <script src="main.js"></script>
+
 </body>
+
 </html>
+
+
+
