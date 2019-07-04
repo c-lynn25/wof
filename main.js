@@ -1,6 +1,7 @@
 (($) => {
     var wheel = $('#wheel');
     var bet = $('#betAmount');
+    var spin =$('#btnSpin');
     var arrow = $('#arrow');
     var info = $("#resAmount");
     var credit=100;
@@ -31,7 +32,7 @@
        700
     ];
      
-    arrow.on('click', () => {
+    spin.on('click', () => {
   
       sound.play();
       
