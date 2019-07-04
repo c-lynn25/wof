@@ -1,6 +1,11 @@
 body {
     background: linear-gradient(to right, red, yellow);
     text-align:center;
+    min-width:100%;
+}
+#image{
+    position:relative;
+    top:15vh;
 }
 #container {
     background: #fff;
@@ -15,13 +20,14 @@ body {
 }
 #aside-right {
     float:right;
-    left:1150px;
 }
 #aside-left {
     float: left;
 }
 #footer {
-    padding:30px;
+    padding: 30px;
+    bottom:0px;
+    left: auto;
 }
 #credAmount{
     border: 5px dotted black;
@@ -34,6 +40,8 @@ body {
     padding: 10px;
     text-align: center;
     text-transform: uppercase;
+    border-radius:5px;
+    margin-bottom:20px;
 }
 .wheelDiv-column {
    padding-left:20px; 
@@ -43,7 +51,7 @@ body {
     margin:auto;
 }
 .spinDiv-column {
-    
+
 }
 button {
     background-color: #4CAF50;
@@ -52,6 +60,15 @@ button {
     border: none;
     cursor: pointer;
     width: 250px;
+
+}
+.credDiv-column button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    width: auto;
 }
 #particles-js canvas {
     position: absolute;
@@ -65,3 +82,103 @@ button {
     -webkit-transition: opacity .8s ease, -webkit-transform 1.4s ease;
     transition: opacity .8s ease, transform 1.4s ease
 }
+input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    margin: 12.3px 0;
+}
+
+    input[type=range]:focus {
+        outline: none;
+    }
+
+    input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 8.4px;
+        cursor: pointer;
+        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+        background: #0871a9;
+        border-radius: 1.3px;
+        border: 0.2px solid #010101;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+        border: 1px solid #000000;
+        height: 33px;
+        width: 16px;
+        border-radius: 3px;
+        background: #ffffff;
+        cursor: pointer;
+        -webkit-appearance: none;
+        margin-top: -12.5px;
+    }
+
+    input[type=range]:focus::-webkit-slider-runnable-track {
+        background: #0a92da;
+    }
+
+    input[type=range]::-moz-range-track {
+        width: 100%;
+        height: 8.4px;
+        cursor: pointer;
+        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+        background: #0871a9;
+        border-radius: 1.3px;
+        border: 0.2px solid #010101;
+    }
+
+    input[type=range]::-moz-range-thumb {
+        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+        border: 1px solid #000000;
+        height: 33px;
+        width: 16px;
+        border-radius: 3px;
+        background: #ffffff;
+        cursor: pointer;
+    }
+
+    input[type=range]::-ms-track {
+        width: 100%;
+        height: 8.4px;
+        cursor: pointer;
+        background: transparent;
+        border-color: transparent;
+        color: transparent;
+    }
+
+    input[type=range]::-ms-fill-lower {
+        background: #065078;
+        border: 0.2px solid #010101;
+        border-radius: 2.6px;
+        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    }
+
+    input[type=range]::-ms-fill-upper {
+        background: #0871a9;
+        border: 0.2px solid #010101;
+        border-radius: 2.6px;
+        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    }
+
+    input[type=range]::-ms-thumb {
+        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+        border: 1px solid #000000;
+        height: 33px;
+        width: 16px;
+        border-radius: 3px;
+        background: #ffffff;
+        cursor: pointer;
+        height: 8.4px;
+    }
+
+    input[type=range]:focus::-ms-fill-lower {
+        background: #0871a9;
+    }
+
+    input[type=range]:focus::-ms-fill-upper {
+        background: #0a92da;
+    }
+
+
+
