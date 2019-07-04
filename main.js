@@ -58,7 +58,7 @@
      
     spin.on('click', () => {
   
-      sound.play();
+      spinner.play();
       
       // var random = Math.floor(Math.random() * 8000) + 6000;
        var random = Math.floor(Math.random() * 800) + 600;
