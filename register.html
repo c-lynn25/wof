@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+	<meta type="viewpoint" content="width=device-width, initial-scale=1">
+    <title>Register</title>
+	<link rel="stylesheet" type="text/css" href="css\style.css">
+	<script src="loginFunction.js"></script>
+
+</head>
+<body>
+	<div class="container">
+    <form id="registerForm">
+        <div class="logo">
+            <img src="img\logo.jpg" /> 
+        </div>
+        <div>
+			<p><input type="text" id="user" placeholder="Username" required/></p>
+            <p><input type="email" id="signUpEmail" placeholder="Email Address" pattern ="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required /></p>
+            <p><input type="password" id="signUpPassword" placeholder="Password" required/></p>
+			<p><input type="password" id="signUpPasswordConfirm" placeholder="Confirm Password" required/></p>
+            
+            <button type="submit" onclick="validateSignUp()">Sign Up</button>
+        </div>
+    </form>
+	</div>
+</body>
+</html>
