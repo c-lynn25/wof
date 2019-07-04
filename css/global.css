@@ -31,8 +31,8 @@ input[type=text],input[type=email], input[type=password] {
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
-/* Set a style for all buttons */
-button {
+/* Set a style for all buttons, assign class="btn" to make link look like button as well.*/
+button, .btn {
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
