@@ -2,14 +2,25 @@
     var wheel = $('#wheel');
     var bet = $('#betAmount');
     var spin =$('#btnSpin');
-    var arrow = $('#arrow');
+    var addCred = $('#addCred');
+    var cashout = $('#cashout');
     var info = $("#resAmount");
     var credit=100;
     var prize = 0;
 
-    var sound = new Howl({
+    var spinner = new Howl({
       src: ['https://www.wheeloffortune.com/Content/Assets//so-many-ways-to-play/downloads/wheel_spin.mp3'],
       volume: 0.5
+    });
+
+    var coin_in = new Howl({
+      src: ['ka-ching.mp3'],
+      volume: 0.5
+    });
+
+    var coin_out = new Howl({
+      src: ['cashout.wav'],
+      volume: 3
     });
     
     var numItems = 12;
@@ -31,6 +42,19 @@
       200,
        700
     ];
+    
+     addCred.on('click', () => {
+  
+      coin_in.play();
+      
+     
+    })
+
+    cashout.on('click', () => {
+  
+      coin_out.play();
+       
+    })
      
     spin.on('click', () => {
   
