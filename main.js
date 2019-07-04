@@ -49,16 +49,18 @@
     function puaseAud(){
       sound.stop(0); 
       
-      //Zoom out results
-      TweenMax.to(info, 1, {scale:1.5, ease:Bounce.easeOut})
-      TweenMax.to(info, 0.2, {scale:1, delay:0.4})
+     //Zoom out results
+    TweenMax.to(info, 1, {scale:1.5, ease:Bounce.easeOut})
+    TweenMax.to(info, 0.2, {scale:1, delay:0.4})
 
-      if(prize > 0)
+    if(prize > 0){
       info.html( prize +" Credits Won!!");
-      else
-      info.html( "Sorry, you lost "+ bet +" Credits.");
-      
       addCredit(prize)
+    }
+    else{
+      info.html( "Lost the bet."+bet+" and "+ prize+" Credits.");
+      addCredit(prize)
+    }
   
     }
   
