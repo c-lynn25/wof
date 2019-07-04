@@ -77,7 +77,14 @@
        
     //pauseTween && pauseTween.kill();
   
-    function addCredit(x){
+      function addCredit(x) {
+        if (x < 0) {
+            if (credit < Math.abs(x)) {
+                credit = 0;
+                displayCredits();
+                alert("You've lost all your credits, please try again!");
+            }
+        }
         credit += x;
         displayCredits();
     }
