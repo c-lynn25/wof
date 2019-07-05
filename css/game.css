@@ -29,7 +29,7 @@ body {
     bottom:0px;
     left: auto;
 }
-#credAmount{
+#credAmount,#resAmount{
     border: 5px dotted black;
     height:auto;
     color:white;
