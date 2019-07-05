@@ -111,9 +111,15 @@
                 displayCredits();
                 alert("You've lost all your credits, please try again!");
             }
+            else {
+            credit += x;
+        displayCredits();
+            }
         }
+        else{
         credit += x;
         displayCredits();
+        }
     }
     function removeCredit(x){
         if(credit>=x){
