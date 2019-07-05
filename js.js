@@ -96,9 +96,13 @@ function addLiveCredit() {
     addCredit(10);
     displayCredits();
 }
+
 function cashout() {
-    credit=0;
+    var info = $("#resAmount");
+    info.html("Cashed out!");
+    credit = 0;
     displayCredits();
+  // alert("cashed out");
 }
 function checkCredit(bet) {
     if (bet > credit) {
