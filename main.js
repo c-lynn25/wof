@@ -1,13 +1,13 @@
 (($) => {
     var wheel = $('#wheel');
-    var bet = $('#betAmount');
+    var bet = $('#betA');
     var spin =$('#btnSpin');
     var addCred = $('#addCred');
     var cashout = $('#cashout');
     var info = $("#resAmount");
-    var credit=100;
+    var cred = $('#credAmount');
     var prize = 0;
-
+   
     var spinner = new Howl({
       src: ['https://www.wheeloffortune.com/Content/Assets//so-many-ways-to-play/downloads/wheel_spin.mp3'],
       volume: 0.5
@@ -57,16 +57,21 @@
     })
      
     spin.on('click', () => {
-  
-      spinner.play();
-      
-      // var random = Math.floor(Math.random() * 8000) + 6000;
-       var random = Math.floor(Math.random() * 800) + 600;
-       var tl = new TimelineMax();
-       tl.to(wheel, 7, { rotation:  "+=" + random, transformOrigin: "50% 50%", ease: Back.easeOut.config(1) })
-  
-       TweenLite.to(tl, 4, {timeScale:0, ease: Power1.easeOut, delay: 3, onComplete: puaseAud })
-       
+        var checkCred = parseInt(cred.text());
+        alert("cred is " + checkCred+" bet is "+bet.val())
+        if (checkCred >= bet.val() && bet.val() > 0) {
+            addCredit(-bet.val());
+            spinner.play();
+
+            // var random = Math.floor(Math.random() * 8000) + 6000;
+            var random = Math.floor(Math.random() * 800) + 600;
+            var tl = new TimelineMax();
+            tl.to(wheel, 7, { rotation: "+=" + random, transformOrigin: "50% 50%", ease: Back.easeOut.config(1) })
+
+            TweenLite.to(tl, 4, { timeScale: 0, ease: Power1.easeOut, delay: 3, onComplete: puaseAud })
+        }
+        else {
+            alert("Please select an appropriate bet amount");}
     })
     
     TweenLite.ticker.addEventListener("tick", update);
@@ -82,8 +87,9 @@
       info.html( prize +" Credits Won!!");
       addCredit(prize)
     }
-    else{
-      info.html( "Lost the bet."+bet+" and "+ prize+" Credits.");
+    else {
+        
+        info.html("Lost " + Math.abs(parseInt(prize)) +" Credits.");
       addCredit(prize)
     }
     }
