@@ -77,7 +77,7 @@
      //Zoom out results
     TweenMax.to(info, 1, {scale:1.5, ease:Bounce.easeOut})
     TweenMax.to(info, 0.2, {scale:1, delay:0.4})
-    if (bet>0){
+    
     if(prize > 0){
       info.html( prize +" Credits Won!!");
       addCredit(prize)
@@ -87,10 +87,8 @@
       addCredit(prize)
     }
     }
-        else{
-            alert("Please select a bet before you spin!");
-            }
-    }
+       
+    
   
     function update() {
     console.log(wheel)
