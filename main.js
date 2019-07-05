@@ -6,6 +6,7 @@
     var cashout = $('#cashout');
     var info = $("#resAmount");
     var cred = $('#credAmount');
+    var arrow = $('#arrow');
     var prize = 0;
    
     var spinner = new Howl({
@@ -73,16 +74,7 @@
             // var random = Math.floor(Math.random() * 8000) + 6000;
             var random = Math.floor(Math.random() * 800) + 600;
             var tl = new TimelineMax();
-            tl.to(wheel, 7, { rotation:  "+=" + random, transformOrigin: "50% 50%", ease: Back.easeOut.config(1),  onUpdate: (
-      function(){
-        var currentRotation = this.target[0]._gsTransform.rotation;     
-        if(Math.round(currentRotation) % (360/12) <= 2 ){
-          if(indicator.progress() > 0.1 || indicator.progress() === 0){
-            indicator.play(0);
-          }
-        }
-      }
-      )})
+            tl.to(wheel, 7, { rotation:  "+=" + random, transformOrigin: "50% 50%", ease: Back.easeOut.config(1) })
 
             TweenLite.to(tl, 4, { timeScale: 0, ease: Power1.easeOut, delay: 3, onComplete: puaseAud })
         }
