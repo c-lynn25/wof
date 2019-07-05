@@ -58,7 +58,8 @@
      
     spin.on('click', () => {
         var checkCred = parseInt(cred.text());
-        alert("cred is " + checkCred+" bet is "+bet.val())
+        if(checkCred=0){
+        alert("Please add more bets to continue!");}
         if (checkCred >= bet.val() && bet.val() > 0) {
             addCredit(-bet.val());
             spinner.play();
