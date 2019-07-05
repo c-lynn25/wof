@@ -97,7 +97,7 @@ function addLiveCredit() {
     displayCredits();
 }
 function cashout() {
-    removeCredit(credit);
+    credit=0;
     displayCredits();
 }
 function checkCredit(bet) {
