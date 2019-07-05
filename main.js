@@ -6,7 +6,6 @@
     var cashout = $('#cashout');
     var info = $("#resAmount");
     var cred = $('#credAmount');
-    var arrow = $('#arrow');
     var prize = 0;
    
     var spinner = new Howl({
@@ -58,12 +57,6 @@
     })
      
     spin.on('click', () => {
-        
-         var indicator = new TimelineMax({});
-
-  indicator.to(arrow, 0.13, {rotation: -10, transformOrigin:"65% 36%", ease:Power1.easeOut})
-        .to(arrow, 0.13, {rotation: 3, backgroundColor: 'red', transformOrigin:"65% 36%", ease:Power1.easeOut})
-  
         var checkCred = parseInt(cred.text());
         if(checkCred==0){
         alert("Please add more bets to continue!");}
@@ -74,7 +67,7 @@
             // var random = Math.floor(Math.random() * 8000) + 6000;
             var random = Math.floor(Math.random() * 800) + 600;
             var tl = new TimelineMax();
-            tl.to(wheel, 7, { rotation:  "+=" + random, transformOrigin: "50% 50%", ease: Back.easeOut.config(1) })
+            tl.to(wheel, 7, { rotation: "+=" + random, transformOrigin: "50% 50%", ease: Back.easeOut.config(1) })
 
             TweenLite.to(tl, 4, { timeScale: 0, ease: Power1.easeOut, delay: 3, onComplete: puaseAud })
         }
@@ -98,9 +91,8 @@
     else {
         
         info.html("Lost " + Math.abs(parseInt(prize)) +" Credits.");
-     
+      addCredit(prize)
     }
-         addCredit(prize)
     }
        
     
@@ -108,9 +100,8 @@
     function update() {
     console.log(wheel)
     console.log(wheel[0])  
-    var elem = wheel[0]._gsTransform.rotation;     // 60
-     indicator.play();
-
+      var elem = wheel[0]._gsTransform.rotation;     // 60
+    
       var angle = elem - (360 * Math.floor(elem / 360));     // 60 
       var index = Math.floor((360 - angle) / arc) % prizes.length; // (300 /30) % 12 = 0  
       prize = prizes[index];
@@ -154,5 +145,3 @@
     }
   
   })(jQuery)
-  
-  
