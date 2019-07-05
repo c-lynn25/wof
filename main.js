@@ -6,7 +6,6 @@
     var cashout = $('#cashout');
     var info = $("#resAmount");
     var cred = $('#credAmount');
-    var arrow = $('#arrow');
     var prize = 0;
    
     var spinner = new Howl({
@@ -107,8 +106,9 @@
     else {
         
         info.html("Lost " + Math.abs(parseInt(prize)) +" Credits.");
-      addCredit(prize)
+     
     }
+         addCredit(prize)
     }
        
     
