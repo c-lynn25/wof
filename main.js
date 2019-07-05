@@ -60,7 +60,7 @@
         var checkCred = parseInt(cred.text());
         if(checkCred==0){
         alert("Please add more bets to continue!");}
-        if (checkCred >= bet.val() && bet.val() > 0) {
+        else if (checkCred >= bet.val() && bet.val() > 0) {
             addCredit(-bet.val());
             spinner.play();
 
