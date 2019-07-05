@@ -12,12 +12,10 @@
       src: ['https://www.wheeloffortune.com/Content/Assets//so-many-ways-to-play/downloads/wheel_spin.mp3'],
       volume: 0.5
     });
-
     var coin_in = new Howl({
       src: ['ka-ching.mp3'],
       volume: 0.5
     });
-
     var coin_out = new Howl({
       src: ['cashout.wav'],
       volume: 3
@@ -49,7 +47,6 @@
       
      
     })
-
     cashout.on('click', () => {
   
       coin_out.play();
@@ -60,6 +57,7 @@
         var checkCred = parseInt(cred.text());
         if(checkCred==0){
         alert("Please add more bets to continue!");}
+        if (checkCred >= bet.val() && bet.val() > 0) {
         else if (checkCred >= bet.val() && bet.val() > 0) {
             addCredit(-bet.val());
             spinner.play();
@@ -68,7 +66,6 @@
             var random = Math.floor(Math.random() * 800) + 600;
             var tl = new TimelineMax();
             tl.to(wheel, 7, { rotation: "+=" + random, transformOrigin: "50% 50%", ease: Back.easeOut.config(1) })
-
             TweenLite.to(tl, 4, { timeScale: 0, ease: Power1.easeOut, delay: 3, onComplete: puaseAud })
         }
         else {
