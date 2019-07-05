@@ -27,6 +27,9 @@ function validateSignUp() {
     if (userPassword != userConfirm) {
         alert("Your passwords do not match!");
     }
+     else {
+        window.location.replace("login.html");
+    }
 }
 function test() {
     window.location.replace("gamePage.html");
