@@ -16,6 +16,7 @@
       src: ['ka-ching.mp3'],
       volume: 0.5
     });
+
     var coin_out = new Howl({
       src: ['cashout.wav'],
       volume: 3
@@ -54,22 +55,28 @@
     })
      
     spin.on('click', () => {
-        var checkCred = parseInt(cred.text());
-        if(checkCred==0){
-        alert("Please add more bets to continue!");}
-        if (checkCred >= bet.val() && bet.val() > 0) {
-        else if (checkCred >= bet.val() && bet.val() > 0) {
-            addCredit(-bet.val());
-            spinner.play();
 
-            // var random = Math.floor(Math.random() * 8000) + 6000;
-            var random = Math.floor(Math.random() * 800) + 600;
-            var tl = new TimelineMax();
-            tl.to(wheel, 7, { rotation: "+=" + random, transformOrigin: "50% 50%", ease: Back.easeOut.config(1) })
-            TweenLite.to(tl, 4, { timeScale: 0, ease: Power1.easeOut, delay: 3, onComplete: puaseAud })
-        }
-        else {
-            alert("Please select an appropriate bet amount");}
+      var checkCred = parseInt(cred.text());
+        
+      if( checkCred == 0 ){
+        alert("Please add more bets to continue!");
+      }
+
+      if (checkCred >= bet.val() && bet.val() > 0) {
+        
+        addCredit(-bet.val());
+        spinner.play();
+
+        // var random = Math.floor(Math.random() * 8000) + 6000;
+        var random = Math.floor(Math.random() * 800) + 600;
+        var tl = new TimelineMax();
+        tl.to(wheel, 7, { rotation: "+=" + random, transformOrigin: "50% 50%", ease: Back.easeOut.config(1) })
+        TweenLite.to(tl, 4, { timeScale: 0, ease: Power1.easeOut, delay: 3, onComplete: puaseAud })
+
+      }
+      else {
+        alert("Please select an appropriate bet amount");
+      }
     })
     
     TweenLite.ticker.addEventListener("tick", update);
