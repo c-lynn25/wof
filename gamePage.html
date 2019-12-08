@@ -1,116 +1,111 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="">
- <!--<![endif]-->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Wheel of Fortune</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:800" rel="stylesheet">
-    <!--<link rel="stylesheet" href="css/styles.css">-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    <script src="js.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="particles.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/game.css">
-    <style>
+  <title>Wheel of Fortune</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  
+  <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+   
+  <script src="js.js"></script>
+ 
+  <link rel="stylesheet" type="text/css" href="css/game.css">
+  <style>
 
-       #navy {
-           z-index: 500; 
-        }
-       
-      #confirm {
-            display: none;
-            background: linear-gradient(to bottom, #1565C0 0%, #b92b27 100%);
-            color: floralwhite;
-            border: 1px solid #aaa;
-            font-family: "Times New Roman", Times, serif;
-            position: fixed;
-            width: 600px;
-            height: 300px;
-            left: 35%;
-            top: 35%;
-            box-sizing: border-box;
-            text-align: center;
-        }
+     #navy {
+         z-index: 500; 
+      }
+     
+    #confirm {
+          display: none;
+          background: linear-gradient(to bottom, #1565C0 0%, #b92b27 100%);
+          color: floralwhite;
+          border: 1px solid #aaa;
+          font-family: "Times New Roman", Times, serif;
+          position: fixed;
+          width: 600px;
+          height: 300px;
+          left: 35%;
+          top: 35%;
+          box-sizing: border-box;
+          text-align: center;
+      }
 
-            .message button { 
-                display: inline-block;
-                border-radius: 12px;
-                border: 1px solid red;
-                padding: 5px;
-                text-align: center;
-                width: auto;
-                cursor: pointer;
-            }
+          .message button { 
+              display: inline-block;
+              border-radius: 12px;
+              border: 1px solid red;
+              padding: 5px;
+              text-align: center;
+              width: auto;
+              cursor: pointer;
+          }
 
-        #confirm .yes {
-            text-align: center;
-            background:red;
-        }
-    </style>
+      #confirm .yes {
+          text-align: center;
+          background:red;
+      }
+
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
 </head>
+<body  onload="displayCredits()">
 
-<body onload="displayCredits()" id="particles-js">
-    <!-- Navigation -->
-    <nav id="navy" class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Wheel of Fortune</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">
-                            THIS USER IS LOGGED ON
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="cashout()">Cash Out</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="logout()">Log Out</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="functionAlert()">Need Help?</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- Page Content -->
-    <div id="image">
-        <img src="img/name.png" style="width:100%;" />
+           
+<div class="container-fluid">
+  <div class="row content">
+
+    <div class="col-sm-3 sidenav">
+                    <h4>Credits</h4>
+                    <p id="credAmount" style="border-radius:5px;"></p>
+                    <h4>Bet</h4>
+                    <input type="range" id="betA" value="1" min="10" max="100" step="10"
+                           oninput="document.getElementById('betAmount').innerHTML = this.value" />
+                    <label id="betAmount"></label><br />
+                    <h4>Result</h4>
+                    <p id="resAmount" style="border-radius:5px;"></p>
+    
+                    <br />
+                    <button id="addCred" onclick="addLiveCredit()">Add Credit</button><br />
+                    <br /><button id="cashout" onclick="cashout()">Cash Out</button><br/>
+                    <br /><button id="btnSpin">Spin</button>
+            
+
     </div>
-    <div id="container">    
-        <div id="aside-left">
-            <div class="credDiv-column">
-                <h4>Credits</h4>
-                <p id="credAmount" style="border-radius:5px;"></p>
-                <h4>Bet</h4>
-                <input type="range" id="betA" value="1" min="10" max="100" step="10"
-                       oninput="document.getElementById('betAmount').innerHTML = this.value" />
-                <label id="betAmount"></label><br />
-                <h4>Result</h4>
-                <p id="resAmount" style="border-radius:5px;"></p>
 
-                <br />
-                <button id="addCred" onclick="addLiveCredit()">Add Credit</button><br />
-                <br /><button id="cashout" onclick="cashout()">Cash Out</button>
-            </div>
-        </div>
-        <div id="aside-right">
+    <div class="col-sm-6">
 
-            <div class="wheelDiv-column" id="svg_wheel">
+            <div id="image">
+                    <img src="name.png" style="width:100%;" />
+                </div>
+
+            <div id="svg_wheel">
                    
                     <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 900 900">
 
@@ -224,42 +219,29 @@
                     
                     </svg>
                     
-                    <br /><button id="btnSpin">Spin</button>
             </div>
-
-        </div>
-        <div id="footer">
-           <!-- <div class="slideDiv-column">
-                <input type="range" id="betA" value="1" min="10" max="100" step="10"
-                       oninput="document.getElementById('betAmount').innerHTML = this.value" />
-                 <label id="betAmount"></label>
-            </div>
-            <div class="spinDiv-column">
-                <button id="arrow">Spin</button>
-            </div> -->
-        </div>
-
-        <div id="confirm">
-            <div class="message">Welcome to <br /><b>Fantastic 5's WHEEL OF FORTUNE!</b><br /> Here is a step by step tutorial on how to play.<br />Players are allocated with 100 credits on the first session.<br />Select a bet amount by using the slider - note, only increments of 10 are allowed, with a minimum bet of 10 credits.<br />Once you've selected your bet, press SPIN!<br />And await your result.</div><br>
-            <button class="yes">Let's try!</button>
-        </div>
 
     </div>
+  </div>
+</div>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenLite.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/utils/Draggable.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TimelineLite.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/plugins/CSSPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/easing/EasePack.min.js"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js" integrity="sha256-q2vnVvwrx3RbYXPyAwx7c2npmULQg2VdCXBoJ5+iigs=" crossorigin="anonymous"></script>
-    <script src="main.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+<footer class="container-fluid">
+  <p>Footer Text</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenLite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/utils/Draggable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TimelineLite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/plugins/CSSPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/easing/EasePack.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js" integrity="sha256-q2vnVvwrx3RbYXPyAwx7c2npmULQg2VdCXBoJ5+iigs=" crossorigin="anonymous"></script>
+
+<script src="main.js"></script>
+
 </body>
-
 </html>
